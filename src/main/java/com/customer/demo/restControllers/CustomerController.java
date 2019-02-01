@@ -21,7 +21,7 @@ import com.customer.demo.model.Customer;
 import com.customer.demo.repo.CustomerRepository;
  
  
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 @RestController
 public class CustomerController {
  

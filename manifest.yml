@@ -1,9 +1,9 @@
 ---
 applications:
-- name: customer-app
+- name: customer-api
   memory: 1024M
   path: target/customer-api-0.0.1-SNAPSHOT.jar
   routes:
-    - route: customer-demo-app.cfapps.io
+    - route: customer-api.cfapps.io
   services:
   - customer_db
