@@ -1,9 +1,17 @@
 ---
 applications:
-- name: customer-api
-  memory: 1024M
-  path: target/customer-api-0.0.1-SNAPSHOT.jar
-  routes:
-    - route: customer-api.cfapps.io
+- name: customer-service
+  path: target/customer-service-0.0.1-SNAPSHOT.jar
   services:
   - customer_db
+  - service-registry
+  - circuit-breaker
+  - config-server
+  timeout: 180
+  memory: 2GB
+  routes:
+  - route: customer-service.pcfapps.nonprod.ptc.nttdataservices.com
+  env:
+    spring.profiles.active: customer
+    
+    
